@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesMessageService } from '../../heroes-message.service';
+import { HeroesMessageService } from './services/heroes-message.service';
 
 @Component({
   selector: 'app-heroes-msg',

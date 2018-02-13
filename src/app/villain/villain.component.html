@@ -1,0 +1,14 @@
+<h2 class="text-center">My Villains</h2>
+<div class="row">
+  <div class="col-4" id="bordcol">
+    <!-- <button type="button" (click)="getListVillains()">Lista</button> -->
+    <ul class="list-group">
+      <li class="list-group-item" style="cursor: pointer;" *ngFor="let vil of villains" >
+        <p>{{vil.id}} {{vil.name}}</p>
+      </li>
+    </ul>
+  </div>
+      <div class="col-4" id="bordcol">
+  <app-villain-detail></app-villain-detail>
+      </div>
+</div>

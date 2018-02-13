@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './Classes/hero';
-import { ListHeroes } from './Mocks/mock.heroes';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { HeroesMessageService } from './heroes-message.service';
+import { HeroesMessageService } from '../../messages/heroes-msg/services/heroes-message.service';
+import { Hero } from '../../Classes/hero';
+import { ListHeroes } from '../../Mocks/mock.heroes';
 
 @Injectable()
 export class HeroService {
@@ -14,5 +14,6 @@ export class HeroService {
     this.heroesMessageService.add('The list of heroes is fetched');
     return  of (ListHeroes);
   }
+
 
 }
