@@ -3,12 +3,14 @@
   <div class="col-4" id="bordcol">
     <!-- <button type="button" (click)="getListVillains()">Lista</button> -->
     <ul class="list-group">
-      <li class="list-group-item" style="cursor: pointer;" *ngFor="let vil of villains" >
-        <p>{{vil.id}} {{vil.name}}</p>
+      <li class="list-group-item" style="cursor: pointer;" *ngFor="let villain of villains"
+        [class.selected]="villain === selectedVillain"
+        (click)="onSelectedVillain(villain)">
+        <p>{{villain.id}} {{villain.name}}</p>
       </li>
     </ul>
   </div>
       <div class="col-4" id="bordcol">
-  <app-villain-detail></app-villain-detail>
+  <app-villain-detail [villain] = "selectedVillain"></app-villain-detail>
       </div>
 </div>

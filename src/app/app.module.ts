@@ -15,9 +15,11 @@ import { VillainComponent } from './villain/villain.component';
 import { HeroService } from './heroes/services/hero.service';
 import { HeroesMessageService } from './messages/heroes-msg/services/heroes-message.service';
 import { VillainService } from './villain/services/villain.service';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { VillainDetailComponent } from './villain/villain-detail/villain-detail.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { DataStorageServiceService } from './shared/services/data-storage-service.service';
+import { AuthService } from './auth/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,13 @@ import { VillainDetailComponent } from './villain/villain-detail/villain-detail.
     DashboardComponent,
     VillainComponent,
     LoginComponent,
-    RegisterComponent,
-    VillainDetailComponent
+    VillainDetailComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule
   ],
-  providers: [HeroService, HeroesMessageService, VillainService],
+  providers: [HeroService, HeroesMessageService, VillainService, DataStorageServiceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

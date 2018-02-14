@@ -10,16 +10,22 @@ import { ListVillain } from '../Mocks/mock.villains';
 })
 export class VillainComponent implements OnInit {
 
-   villain: Villain[];
-  villains = this.villain = ListVillain;
+  villains: Villain[];
+  selectedVillain: Villain;
   constructor( private villainService: VillainService) { }
 
   ngOnInit() {
+    this.getListVillains();
   }
 
-  getListVillains() {
+  onSelectedVillain(villain: Villain): void {
+    this.selectedVillain = villain;
+
+  }
+
+  getListVillains(): void {
     console.log('villain');
-    this.villainService.getVillain().subscribe(villain => this.villain = villain);
+    this.villainService.getVillain().subscribe(villains => this.villains = villains);
   }
 
 }
