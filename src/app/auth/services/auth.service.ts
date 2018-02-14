@@ -11,6 +11,15 @@ export class AuthService {
 
   //
   loginUser( email: string, pass: string) {
+    firebase.auth().signInWithEmailAndPassword(email, pass).
+    then( response => {
+      console.log('Login success', response);
+      firebase.auth().currentUser.getIdToken().
+      then((token: string) => this.token = token);
+      this.router.navigate(['/main']).
+      catch(error => console.log('Error at login: ', error));
+
+    });
 
   }
 

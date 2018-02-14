@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-6 col-sm-3 col-md-5 offset-sm-1 offset-md-1" id="bordcol">
         <h3 class="text-center">Login</h3>
-        <!-- <form (ngSubmit)="onLogin(f)" #f="ngForm"> -->
+        <form (ngSubmit)="onLogin(f)" #f="ngForm">
           <div class="form-group">
             <label for="email">Mail</label>
             <input type="email" id="email" name="email" ngModel class="form-control" required>
@@ -11,6 +11,6 @@
             <input type="pass" id="pass" name="pass" ngModel class="form-control" required minlength="6">
           </div>
           <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Sign In</button>
-        <!-- </form> -->
+        </form>
       </div>
     </div>
