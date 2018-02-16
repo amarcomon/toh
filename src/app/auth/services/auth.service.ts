@@ -41,4 +41,14 @@ logout() {
   firebase.auth().signOut();
   this.token = null;
 }
+
+getToken() {
+  firebase.auth().currentUser.getToken().then((token: string) => this.token = token);
+  return this.token;
+}
+
+getIdToken() {
+  firebase.auth().currentUser.getIdToken().then((token: string) => this.token = token);
+  return this.token;
+}
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { VillainService } from './villain/services/villain.service';
 import { VillainDetailComponent } from './villain/villain-detail/villain-detail.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DataStorageServiceService } from './shared/services/data-storage-service.service';
+import { DataStorageService } from './shared/services/data-storage-service.service';
 import { AuthService } from './auth/services/auth.service';
 
 @NgModule({
@@ -36,9 +37,9 @@ import { AuthService } from './auth/services/auth.service';
     RegisterComponent
   ],
   imports: [
-    BrowserModule, FormsModule, AppRoutingModule
+    BrowserModule, FormsModule, AppRoutingModule, HttpModule
   ],
-  providers: [HeroService, HeroesMessageService, VillainService, DataStorageServiceService, AuthService],
+  providers: [HeroService, HeroesMessageService, VillainService, DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

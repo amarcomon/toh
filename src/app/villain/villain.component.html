@@ -1,7 +1,9 @@
 <h2 class="text-center">My Villains</h2>
 <div class="row">
   <div class="col-4" id="bordcol">
-    <!-- <button type="button" (click)="getListVillains()">Lista</button> -->
+    <div class="row">
+      <button type="button" (click)="onSaveVillains()">Save data!</button>
+    </div>
     <ul class="list-group">
       <li class="list-group-item" style="cursor: pointer;" *ngFor="let villain of villains"
         [class.selected]="villain === selectedVillain"

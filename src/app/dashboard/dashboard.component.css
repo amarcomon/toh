@@ -7,6 +7,7 @@
 [class*='col-']:last-of-type {
   padding-right: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -59,4 +60,5 @@ h4 {
   .module {
     min-width: 60px;
   }
+
 }

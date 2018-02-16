@@ -1,3 +1,8 @@
+button{
+  background-color: aquamarine;
+  border: 4px solid blue;
+  border-radius: 5px;
+}
 .row{
   padding:25px;
 }

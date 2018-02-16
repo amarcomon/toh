@@ -1,4 +1,5 @@
-<div *ngIf="hero">
+<div class="row">
+<div id="bordcol" *ngIf="hero">
 
   <h2>{{hero.name | uppercase }} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
@@ -7,5 +8,6 @@
       <input [(ngModel)]="hero.name" placeholder="name">
     </label>
   </div>
-
+<button (click)="goBack()">Go Back!</button>
+</div>
 </div>
