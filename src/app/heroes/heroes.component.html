@@ -5,6 +5,7 @@
     <div class="row">
       <button name ="herobutton" style="cursor: pointer;" (click)="onSaveData()"><a>Save Data</a></button>
     </div>
+    <button name ="getbutton" style="cursor: pointer;" (click)="getHeroesStoraged()"><a>Get Data</a></button>
       <ul class="list-group">
           <li class= "list-group-item" style="cursor: pointer;" *ngFor="let hero of heroes">
             <a routerLink="/detail/{{hero.id}}">

@@ -10,7 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HeroesDetailComponent } from './heroes/heroes-detail/heroes-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'main', component: MainComponent},
   { path: 'heroes', component: HeroesComponent},
   { path: 'villains', component: VillainComponent},

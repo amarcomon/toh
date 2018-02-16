@@ -21,16 +21,21 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
   }
-
+  /*Recupera el listado de heroes mockeados*/
   getHeroes(): void {
 
     this.heroService.getHeroesService().subscribe( heroes => this.heroes = heroes);
   }
-
+  /*TODO: Recuperar los datos de heroes de la base de datos*/
+  getHeroesStoraged() {
+    console.log('getted data!');
+    console.log(this.dataStorageService.getHeroes());
+  }
+  /*Almacena los datos en la base de datos */
   onSaveData() {
     this.dataStorageService.storeHeroes().subscribe( (response: Response) => console.log('saved data!', response));
   }
-
+  /* Añade un nuevo heroe al listado actual */
   addHeroe(form: NgForm) {
     // const hero = new Hero;
     const id: number = form.value.id;

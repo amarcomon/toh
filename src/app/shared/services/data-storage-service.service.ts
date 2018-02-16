@@ -17,12 +17,14 @@ export class DataStorageService {
     private villainsService: VillainService
   ) { }
 
+  /** Almacena en la base de datos los heroes que recupera de heroesService*/
   storeHeroes() {
     const token = this.authService.getIdToken();
     const heroes = this.heroesService.getHeroesService();
     return this.http.put(this.fireUrl + 'heroes.json?auth=' + token, heroes);
   }
 
+  /** Almacena en la base de datos los villanos que recupera de villainService*/
   storeVillains() {
     const token = this.authService.getIdToken();
     const villains = this.villainsService.getVillain();
@@ -30,15 +32,14 @@ export class DataStorageService {
   }
 
   getHeroes() {
+    console.log('get heroes storage data');
     const token = this.authService.getToken();
     this.http.get(this.fireUrl + 'heroes.json?auth=' + token)
     .map((response: Response) => {
       const heroes: Hero[] = response.json();
       return heroes;
 
-    }).subscribe(
-      (heroes: Hero[]) => this.heroesService.setHeroes(heroes)
-    );
+    }).subscribe((heroes: Hero[] ) => this.heroesService.setHeroes(heroes));
   }
 
 
